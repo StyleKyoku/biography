@@ -14,13 +14,18 @@ export default function Education() {
           </p>
         </div>
         <div className={styles["edu-intro-img"]}>
-          <img src="/assets/images/education/man.svg" alt="a man" />
+          <img
+            src={import.meta.env.BASE_URL + "/assets/images/education/man.svg"}
+            alt="a man"
+          />
         </div>
       </section>
 
       <section className={styles["about-uni"]}>
         <img
-          src="/assets/images/education/university.svg"
+          src={
+            import.meta.env.BASE_URL + "/assets/images/education/university.svg"
+          }
           alt="University icon"
         />
         <h2>About the University</h2>
@@ -40,7 +45,10 @@ export default function Education() {
             Computer Systems, Software testing and etc
           </p>
           <img
-            src="/assets/images/about-me/arch-linux.svg"
+            src={
+              import.meta.env.BASE_URL +
+              "/assets/images/about-me/arch-linux.svg"
+            }
             alt="Arch-linux icon"
           />
         </div>
@@ -50,7 +58,10 @@ export default function Education() {
             Completed 8-course program focused on HTML, CSS, React, JS, version
             control, UI/UX and practise
           </p>
-          <img src="/assets/images/about-me/react.svg" alt="React icon" />
+          <img
+            src={import.meta.env.BASE_URL + "/assets/images/about-me/react.svg"}
+            alt="React icon"
+          />
         </div>
         <div className={styles["progress"]}>
           <h3>Projects & Experience</h3>
@@ -59,7 +70,10 @@ export default function Education() {
             Some projects are made in a team with back-end (REST-APIs, Python,
             MySQL).
           </p>
-          <img src="/assets/images/footer/github.svg" alt="GitHub icon" />
+          <img
+            src={import.meta.env.BASE_URL + "/assets/images/footer/github.svg"}
+            alt="GitHub icon"
+          />
         </div>
       </section>
     </main>

@@ -45,7 +45,10 @@ export default function HomePage() {
           </div>
           <div className={styles["main-sec-img"]}>
             <img
-              src="/assets/images/about-me/Nikita-Zhdanov.JPG"
+              src={
+                import.meta.env.BASE_URL +
+                "/assets/images/about-me/Nikita-Zhdanov.JPG"
+              }
               alt="Nikita Zhdanov"
               className={styles["profile-image"]}
             />

@@ -14,7 +14,7 @@ export default function Footer() {
       <div className={styles["footer-desc"]}>
         <div className={styles["footer-links-div"]}>
           <img
-            src="/assets/images/footer/github.svg"
+            src={import.meta.env.BASE_URL + "/assets/images/footer/github.svg"}
             alt="GitHub"
             className={styles["footer-icon"]}
           />
@@ -27,7 +27,9 @@ export default function Footer() {
         </div>
         <div className={styles["footer-links-div"]}>
           <img
-            src="/assets/images/footer/telegram.svg"
+            src={
+              import.meta.env.BASE_URL + "/assets/images/footer/telegram.svg"
+            }
             alt="Telegram"
             className={styles["footer-icon"]}
           />
@@ -37,7 +39,7 @@ export default function Footer() {
         </div>
         <div className={styles["footer-links-div"]}>
           <img
-            src="/assets/images/footer/email.svg"
+            src={import.meta.env.BASE_URL + "/assets/images/footer/email.svg"}
             alt="Email"
             className={styles["footer-icon"]}
           />
