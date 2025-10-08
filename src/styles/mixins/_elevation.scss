@@ -1,0 +1,12 @@
+@use "sass:map";
+
+$elevations: (
+  1: 0 2px 8px rgba(0, 0, 0, 0.08),
+  2: 0 6px 20px rgba(0, 0, 0, 0.12),
+  3: 0 10px 30px rgba(0, 0, 0, 0.18),
+  4: 0 4px 16px rgba(0, 0, 0, 0.1),
+);
+
+@mixin elevation($level) {
+  box-shadow: map.get($elevations, $level);
+}

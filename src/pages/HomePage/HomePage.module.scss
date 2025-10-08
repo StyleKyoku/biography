@@ -1,0 +1,112 @@
+@use "sass:map";
+@use "../../styles/tokens" as t;
+@use "../../styles/mixins" as mx;
+@use "../../styles/mixins/elevation" as elev;
+
+.about-me {
+  display: flex;
+  justify-content: center;
+
+  padding: 0 t.space(4);
+
+  .main-sec {
+    min-width: 300px;
+    max-width: 850px;
+
+    align-items: center;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+
+    gap: t.space(8);
+    padding: t.space(8) 0;
+
+    @include mx.mqDown(mb) {
+      display: flex;
+      flex-direction: column-reverse;
+
+      padding: t.space(4) 0;
+    }
+
+    &-text {
+      display: flex;
+      flex-direction: column;
+
+      h1 {
+        @include mx.fluid-text(h1);
+        margin-bottom: t.space(medium);
+        color: t.t-color(primary);
+        margin-bottom: t.space(3);
+      }
+
+      p {
+        @include mx.fluid-text(h6);
+        line-height: 1.6;
+        color: t.t-color(text-base);
+        margin-bottom: t.space(2);
+      }
+    }
+    &-img {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      img {
+        max-height: 400px;
+        max-width: 400px;
+        aspect-ratio: 1 / 1;
+        border-radius: t.rad(full);
+        object-fit: cover;
+
+        @include mx.mqDown(tb) {
+          max-height: 200px;
+          max-width: 200px;
+        }
+      }
+    }
+
+    &-buttons-list {
+      display: flex;
+      gap: t.space(3);
+      margin-top: t.space(4);
+
+      button:first-child {
+        @include mx.button-base(primary, sm);
+      }
+
+      button:last-child {
+        @include mx.button-base(secondary, sm);
+      }
+    }
+  }
+}
+
+.skills-container {
+  display: flex;
+  justify-content: center;
+
+  padding: 0 t.space(4);
+
+  .skills-sec {
+    min-width: 300px;
+    max-width: 850px;
+
+    padding: t.space(6) 0;
+
+    @include mx.mqDown(mb) {
+      padding: t.space(4) 0;
+    }
+  }
+
+  .skills-title {
+    @include mx.fluid-text(h2);
+    color: t.t-color(primary);
+    margin-bottom: t.space(6);
+  }
+
+  .skills-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: t.space(8);
+  }
+}

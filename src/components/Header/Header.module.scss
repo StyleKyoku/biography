@@ -1,0 +1,109 @@
+@use "sass:map";
+@use "../../styles/tokens" as t;
+@use "../../styles/mixins" as mx;
+@use "../../styles/mixins/elevation" as elev;
+
+.header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 60px;
+  background-color: t.t-color(surface);
+  padding: 0 t.space(5);
+
+  @include mx.mqDown(mb) {
+    position: sticky;
+    z-index: t.zindex(sticky);
+  }
+
+  &-logo {
+    font-weight: bold;
+    @include mx.fluid-text(h4);
+    margin: 0 t.space(4);
+    color: t.t-color(primary);
+    text-decoration: none;
+
+    @include mx.mqDown(tb) {
+      margin-right: t.space(3);
+    }
+
+    @include mx.mqDown(mb) {
+      margin-right: t.space(2);
+    }
+  }
+
+  &-nav {
+    align-items: center;
+
+    @include mx.mqDown(tb) {
+      position: relative;
+      left: auto;
+      top: auto;
+      display: flex;
+      transform: none;
+    }
+
+    @include mx.mqDown(mb) {
+      height: 100vh;
+      position: fixed;
+      z-index: t.zindex(sticky);
+      left: -220px;
+      padding-top: t.space(8);
+      top: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      transform: none;
+      width: 220px;
+      background-color: white;
+      transition: transform 0.1s linear;
+    }
+
+    &.active {
+      @include mx.mqDown(mb) {
+        transform: translateX(100%);
+      }
+    }
+  }
+
+  &-menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+
+    @include mx.mqDown(tb) {
+      padding: 0;
+    }
+
+    @include mx.mqDown(mb) {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    li {
+      padding: 1px t.space(3);
+
+      @include mx.mqDown(mb) {
+        padding: t.space(3) t.space(4);
+      }
+
+      a[aria-current="page"] {
+        border-bottom: 2px solid t.t-color(primary);
+      }
+    }
+  }
+}
+
+.burger-button {
+  display: none;
+  z-index: t.zindex(sticky);
+
+  @include mx.mqDown(mb) {
+    display: block;
+    left: 20px;
+    top: 10px;
+    border: none;
+    background: none;
+  }
+}

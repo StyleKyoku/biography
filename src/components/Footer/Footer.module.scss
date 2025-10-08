@@ -1,0 +1,54 @@
+@use "sass:map";
+@use "../../styles/tokens" as t;
+@use "../../styles/mixins" as mx;
+@use "../../styles/mixins/elevation" as elev;
+
+.footer {
+  display: flex;
+  justify-content: center;
+  gap: t.space(xl);
+  background-color: t.t-color(surface);
+  padding: t.space(7) 0;
+  border-top: 1px solid t.t-color(black);
+
+  @include mx.mqDown(mb) {
+    padding: t.space(5) t.space(2);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: t.space(8);
+  }
+
+  &-desc {
+    max-width: 250px;
+    min-width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: t.space(2);
+
+    @include mx.mqDown(mb) {
+      max-width: 290px;
+    }
+
+    &-title {
+      @include mx.fluid-text(h5);
+      margin: 0;
+    }
+  }
+
+  &-links-div {
+    display: flex;
+    gap: t.space(1);
+
+    a:hover {
+      text-decoration: underline;
+      color: t.t-color(text-muted);
+    }
+  }
+
+  &-icon {
+    width: 24px;
+    height: 24px;
+  }
+}

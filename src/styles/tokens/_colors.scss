@@ -1,0 +1,38 @@
+@use "sass:map";
+
+$colors: (
+  bg: #fafaf8,
+  // app background
+  surface: #ffffff,
+  // cards, sheets, menus, etc.
+  line: #e7eceb,
+
+  // borders, dividers
+  primary: #1f6b5f,
+  // primary brand color
+  primary-light: #cfe7e3,
+  // lighter shade of primary
+  primary-hover: #17594f,
+
+  // hover state for primary
+  accent: #8ecae6,
+
+  // secondary brand color
+  text-base: #1f2a2a,
+  // main text color
+  text-muted: #667a78,
+  // secondary text color
+  text-on-primary: #ffffff,
+
+  // text on primary color
+  warning: #ffb703,
+  error: #e76f51,
+
+  white: #ffffff,
+  black: #000000,
+  transparent: transparent,
+);
+
+@function t-color($name) {
+  @return map.get($colors, $name);
+}
