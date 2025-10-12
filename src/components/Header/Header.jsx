@@ -66,9 +66,6 @@ const Header = () => {
           <li>
             <NavLink to="/hobbies"> Hobbies</NavLink>
           </li>
-          <li>
-            <NavLink to="/favourite-meals"> Favourite Meals</NavLink>
-          </li>
         </ul>
       </nav>
     </header>
