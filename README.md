@@ -136,6 +136,10 @@ Created by **Nikita Zhdanov** —
 a frontend developer passionate about clean architecture, adaptive design, and SCSS token systems.  
 Currently studying **Computer Science at Dublin City University (DCU)**.
 
+📧 **Email:** nikita.zhdanov.ie@gmail.com  
+💬 **Telegram:** [@stylekyoku](https://t.me/stylekyoku)
+
+
 ---
 
 *Built with React, SCSS, Vite — and a love for clean front-end architecture.*
