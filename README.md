@@ -6,40 +6,40 @@
 
 ## ✨ Project Overview
 
-**Biography Website** — это персональный одностраничный веб-проект, созданный для практики современных фронтенд-технологий.  
-Он демонстрирует работу с React, SCSS-токенами, адаптивными сетками и архитектурой компонентов с чётким разграничением ответственности.
+**Biography Website** is a personal single-page front-end project built to practice modern web development technologies.  
+It demonstrates practical use of React, SCSS token systems, adaptive grid layouts, and clean component-based architecture.
 
-Проект реализует три основные страницы:
-- **About Me** — базовая информация и навыки
-- **Education** — подробности об обучении и специализации
-- **Hobbies** — хобби и интересы (дебаты, путешествия, стратегии)
+The project includes three main sections:
+- **About Me** — personal introduction and core skills  
+- **Education** — details about studies and specialization  
+- **Hobbies** — interests and activities (debating, traveling, strategy games)
 
-Навигация между страницами осуществляется через **React Router** с отдельным `RootLayout`, который объединяет общий **Header**, **Footer** и основной контент через `Outlet`.
+Navigation between pages is handled using **React Router** with a dedicated `RootLayout`, which combines a shared **Header**, **Footer**, and main content via `Outlet`.
 
 ---
 
 ## ⚡ Tech Stack
 
-- **React.js** — компонентная архитектура и управление состоянием
-- **React Router DOM** — маршрутизация и структура приложения
-- **Vite** — сборщик и dev-сервер с мгновенной перезагрузкой
-- **SCSS Modules** — инкапсуляция стилей, исключающая утечку классов
-- **SCSS Tokens & Mixins** — единая система переменных и пресетов
-- **Git & GitHub** — контроль версий и CI/CD
-- **GitHub Pages + Actions** — автоматический деплой из `main` ветки
+- **React.js** — component-based architecture and state management  
+- **React Router DOM** — routing and page structure  
+- **Vite** — fast build tool and dev server  
+- **SCSS Modules** — encapsulated styling to prevent leakage between components  
+- **SCSS Tokens & Mixins** — unified system for spacing, colors, and elevation  
+- **Git & GitHub** — version control and CI/CD  
+- **GitHub Pages + Actions** — automatic deployment from the `main` branch  
 
 ---
 
 ## 💡 Key Features
 
-- 🧩 **Component-based structure:** чёткое разделение компонентов — `Header`, `Footer`, `Modal`, `RootLayout`
-- 🎨 **Tokenized SCSS system:** цвета, отступы, радиусы и z-index управляются из токенов (`t-color()`, `t.space()`, `t.rad()`)
-- 🧱 **Adaptive grid layouts:** сетки построены на CSS Grid и Flexbox (desktop-first подход)
-- 🔄 **Reusable mixins:** `fluid-text()` для адаптации типографики, `button-base()` для единых пресетов кнопок, `elevation()` для теней
-- 🪄 **Animated modal window:** модалка появляется плавно и закрывается по клику вне окна или при скролле (через `useRef` + `useEffect`)
-- 🚀 **Optimized deployment:** деплой на GitHub Pages через `peaceiris/actions-gh-pages@v3`
-- 🧠 **Modern React hooks:** используется `useState`, `useEffect`, `useRef`, `useMemo` и кастомный хук `useAutoClose`
-- 🧩 **SCSS Modules isolation:** каждый компонент имеет собственный `.module.scss`, предотвращая утечку стилей между секциями
+- 🧩 **Component-based structure:** clean separation of `Header`, `Footer`, `Modal`, and `RootLayout`  
+- 🎨 **Tokenized SCSS system:** all colors, spacing, radii, and z-index values are controlled via tokens (`t-color()`, `t.space()`, `t.rad()`)  
+- 🧱 **Adaptive grid layouts:** desktop-first grid and flex layouts for responsive design  
+- 🔄 **Reusable mixins:** `fluid-text()` for typography scaling, `button-base()` for consistent buttons, `elevation()` for shadows  
+- 🪄 **Animated modal window:** opens smoothly and closes when clicking outside or scrolling (using `useRef` + `useEffect`)  
+- 🚀 **Automated deployment:** powered by `peaceiris/actions-gh-pages@v3`  
+- 🧠 **Modern React hooks:** utilizes `useState`, `useEffect`, `useRef`, `useMemo`, and custom hook `useAutoClose`  
+- 🧩 **Style isolation with SCSS Modules:** each section has its own `.module.scss` to prevent style conflicts  
 
 ---
 
@@ -47,37 +47,37 @@
 
 ### Routing & Layout
 
-Структура маршрутов:
+Routing structure:
 ```
 /           → About Me  
 /education  → Education  
 /hobbies    → Hobbies
 ```
 
-Используется единый `RootLayout`:
-- включает `Header` (с активной подсветкой `[aria-current="page"]`)
-- рендерит контент через `<Outlet />`
-- завершает страницу компонентом `Footer`
+The `RootLayout` component:
+- includes a **Header** with active link highlighting via `[aria-current="page"]`  
+- renders page content through `<Outlet />`  
+- ends with a shared **Footer**
 
 ### Styling Architecture
 
-- Desktop-first подход с использованием SCSS Modules  
-- Токенизированная дизайн-система (`_tokens.scss`)  
-- Миксины для типографики, кнопок и теней  
-- Цветовая схема: основной цвет — `#1F6B5F`  
+- Desktop-first approach using SCSS Modules  
+- Tokenized design system (`_tokens.scss`)  
+- Mixins for typography, buttons, and elevation effects  
+- Color palette: main accent — `#1F6B5F`
 
 ### Modal Interaction
 
-Модальное окно реализовано на `useState` и `useRef`, с кастомным хуком `useAutoClose`, который:
-- Закрывает окно при клике вне области  
-- Закрывает при прокрутке страницы  
-- Поддерживает анимацию открытия через `transform: scale()` и плавное исчезновение через `opacity`
+The modal window is implemented using `useState` and `useRef`, combined with a custom hook `useAutoClose`, which:
+- Closes the modal when clicking outside  
+- Closes the modal on scroll  
+- Plays an opening scale animation and a smooth fade-out transition  
 
 ---
 
 ## 💾 Deployment
 
-Проект деплоится автоматически через GitHub Actions:
+Deployed automatically via GitHub Actions:
 
 ```yaml
 - uses: actions/checkout@v3
@@ -90,18 +90,18 @@
     publish_dir: ./dist
 ```
 
-**Live:** [https://stylekyoku.github.io/biography/](https://stylekyoku.github.io/biography/)
+**Live demo:** [https://stylekyoku.github.io/biography/](https://stylekyoku.github.io/biography/)
 
 ---
 
 ## 🧠 What This Project Demonstrates
 
-- Владение **React hooks** и передачей состояния через props  
-- Создание **адаптивных макетов** на гридах и флексах  
-- Настройку **SCSS-архитектуры** с токенами и миксинами  
-- Реализацию **модальных окон с UX-анимацией**  
-- Использование **GitHub Actions** для автоматического деплоя  
-- Организацию проекта с **чистой структурой и переиспользуемыми компонентами**
+- Confident use of **React hooks** and prop-based data flow  
+- Creation of **adaptive layouts** using Grid and Flexbox  
+- Building **SCSS architecture** with tokens, mixins, and modules  
+- Implementation of **animated modals** with accessibility in mind  
+- Setting up **automated CI/CD deployment** via GitHub Actions  
+- Clean project organization with **reusable components** and modular styles  
 
 ---
 
@@ -114,7 +114,7 @@ npm install
 npm run dev
 ```
 
-Запусти в браузере:
+Open in your browser:
 ```
 http://localhost:5173
 ```
@@ -125,7 +125,7 @@ http://localhost:5173
 
 ```bash
 npm run build
-# Upload the contents of /dist to the gh-pages branch automatically (handled via GitHub Actions)
+# The /dist directory will be published automatically via GitHub Actions
 ```
 
 ---
@@ -133,7 +133,7 @@ npm run build
 ## 👨‍💻 About the Author
 
 Created by **Nikita Zhdanov** —  
-frontend developer passionate about component architecture, adaptive design, and clean SCSS token systems.  
+a frontend developer passionate about clean architecture, adaptive design, and SCSS token systems.  
 Currently studying **Computer Science at Dublin City University (DCU)**.
 
 ---
