@@ -33,7 +33,7 @@ Navigation between pages is handled using **React Router** with a dedicated `Roo
 ## 💡 Key Features
 
 - 🧩 **Component-based structure:** clean separation of `Header`, `Footer`, `Modal`, and `RootLayout`  
-- 🎨 **Tokenized SCSS system:** all colors, spacing, radii, and z-index values are controlled via tokens (`t-color()`, `t.space()`, `t.rad()`)  
+- 🎨 **Tokenized SCSS system:** all colors, spacing, radius, z-index and other values are controlled via tokens using functions (`t-color()`, `space()`, `rad()`)  
 - 🧱 **Adaptive grid layouts:** desktop-first grid and flex layouts for responsive design  
 - 🔄 **Reusable mixins:** `fluid-text()` for typography scaling, `button-base()` for consistent buttons, `elevation()` for shadows  
 - 🪄 **Animated modal window:** opens smoothly and closes when clicking outside or scrolling (using `useRef` + `useEffect`)  
@@ -62,7 +62,7 @@ The `RootLayout` component:
 ### Styling Architecture
 
 - Desktop-first approach using SCSS Modules  
-- Tokenized design system (`_tokens.scss`)  
+- Tokenized design system (`/tokens/.scss`)  
 - Mixins for typography, buttons, and elevation effects  
 - Color palette: main accent — `#1F6B5F`
 
